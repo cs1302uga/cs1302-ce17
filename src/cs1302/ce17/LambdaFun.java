@@ -68,44 +68,28 @@ public class LambdaFun {
      *
      * @param <T> the type of the array elements
      * @param t the specified array
-     * @param 
+     * @param p the specified predicate
+     * @throws NullPointerException if the specified predicate is {@code null}
      */
-    private static <T> void printMatches(T[] t, Predicate<T> p) {
-        for (T e: t) {
-            if(p.test(e)) {
-                System.out.println(e);
-            } // if
-        } // for
-    } //printMatches
-
-    private static <T> String printFilteredArray(T[] t, Function<T,String> f, Predicate<String> p,
-                                         String sep) {
-        String returnString = "";
-        for (T e: t) {
-            if(p.test(f.apply(e))) {
-                returnString += f.apply(e);
-                returnString += sep;
-            } // if
-        } // for
-        return returnString.substring(0, returnString.lastIndexOf(sep));
-    } // printArray
+    private static <T> void printlnMatches(T[] t, Predicate<T> p) {
+        throw new UnsupportedOperationException("not yet implemented");
+    } // printlnMatches
 
     /**
-     * If the generic array is full, double its size.
-     * Precondition: Empty spots in the array are null. The entries end at the first null value.
+     * Prints the elements of the array that pass the test specified by the given predicate
+     * using a string mapper. More formally, this method prints the string mapped elements 
+     * {@code f.apply(e)} in the array referred to by {@code t} for each {@code e} such that 
+     * {@code p.test(e)}. Each string mapped element will be printed on its own line.
      *
-     *
+     * @param <T> the type of the array elements
+     * @param t the specified array
+     * @param p the specified predicate
+     * @param p the specified string mapper
+     * @throws NullPointerException if the specified predicate or string mapper is {@code null}
      */
-    private static <T> T[] addElement(T[] t, IntFunction<T[]> f, Function<String, T> mapper) {
-        T[] newT = f.apply(t.length + 1);
-        //The program turned me into a newT.  I got better...
+    private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f) {
+        throw new UnsupportedOperationException("not yet implemented");
+    } // printlnMappedMatches
 
-        String in = input.nextLine();
-        
-        newT[t.length] = mapper.apply(in);
-        
-        return newT;
-    } // addElement
-    
-    
 } // LambdaFun
+
