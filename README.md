@@ -1,10 +1,11 @@
 
-# cs1302-ce17 TBD
+# cs1302-ce17 Generic Method Implementation
 
 > TBD
 
 This class exercise explores functional interfaces and lambda expressions in
-conjunction with generic methods and interfaces.
+conjunction with generic methods and interfaces. In this exercise, only the generic
+method signatures will be provided. Implementation details are left to the student.
 
 ## References and Prerequisites
 
@@ -39,88 +40,30 @@ command depends on your present working directory), then please note that contex
 
 ### Exercise Steps
 
+1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
+    and test these methods in the order that they appear in the Java program, starting with `printMatches`. The
+    exact signature for this method is:
+             `private static <T> void printMatches(T[]t, Predicate<T> p)`
+    Answer the following questions about this method in your notes:
+    * What is the generic type parameter?
+    * Specifically, what types of references can replace `T`?
+    * In order to call this method, we need an reference to an object of a class that implements `Predicate<T>`. 
+      `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
+      of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
+1. Implement the `printMatches` method in `LambdaFun.java`.
+1. In the main method of `LambdaFun`, create an object of type `Predicate<String>` and initialize the object using
+   a lambda expression. The lambda expression should provide an implementation for the single abstract method of
+   `Predicate<T>`. This method should return `true` if the string argument contains the letter 'a'.
+1. Call `printMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` object.  
+   You will know if everything is working correctly if the method only prints strings containing the letter 'a'.
+1. Create additional `String` arrays to further test your implementation. Make sure to provide sufficient output
+   so that it will be easy to convince your TA or instructor that everything is working properly.
+   
+1. Stage and commit all changes.
+
+**CHECKPOINT**
+   
 1. 
-
-
-
-    
-1. There is a `cs1302-ce16.jar` in the `lib` subdirectory. 
-   The API documentation for the compiled code contained in this
-   file can be found [here](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce16-api/index.html).
-
-1. Examine the [`ArrayUtility.sort(T[])`](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce15-api/cs1302/util/ArrayUtility.html#sort-T:A-)
-   and 
-   [`ArrayUtility.max(T[])`](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce16-api/cs1302/util/ArrayUtility.html#max-T:A-)
-   methods in the `cs1302.util.ArrayUtility` API documentation. Actually read the documentation.
-   In your notes, indicate the potential type arguments (replacements) for `T` for each method.
-   
-1. Inspect the `Student`, `Course`, and `Driver` classes provided under the `src` directory.
-   As written, can you sort and find a maximal element of the `students` and `courses` arrays 
-   using the methods that the exercise had you inspect in the previous step?
-   Try it! For each of the four possibilities, indicate
-   a guess in your notes as to whether or not it will work. Then, try each possibility
-   independently to confirm your guess. 
-   
-   * If a possiblility **does work**, then add code to the `Driver` class that demos how it 
-     works in a meaningful way. 
-   * If a possiblility **does NOT work**, then note why. 
-   
-   Here is a table to help you keep track of the
-   different combinations.
-   
-   | Class     | `sort(T[])` | `max(T[])` |
-   |-----------|-------------|------------|
-   | `Course`  |
-   | `Student` |
-   
-   **What is "a meaningful way"?** You need to make the code, documentation, and the printout clear such that 
-   anyone who is reading it can understand what is going on.
-
-1. Stage and commit all changes.
-
-**CHECKPOINT**
-   
-1. Examine the [`ArrayUtility.sort(T[], Comparator<T>)`](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce16-api/cs1302/util/ArrayUtility.html#sort-T:A-java.util.Comparator-)
-   and 
-   [`ArrayUtility.max(T[], Comparator<T>)`](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce16-api/cs1302/util/ArrayUtility.html#max-T:A-java.util.Comparator-)
-   methods in the `cs1302.util.ArrayUtility` API documentation. Actually read the documentation.
-   In your notes, indicate the potential type arguments (replacements) for `T` for each method.
-
-1. The methods you examined in the previous step make use of the `Comparator<T>` interface
-   to facilitate internal comparisons when needed. Unlike the overloads you examined in the
-   first checkpoint, these "comparator" versions are more flexible as they allow the user
-   of the method to specify their preferred induced ordering on the fly __without modifying the classes__
-   of the objects being sorted. Isn't that cool?
-   
-1. Without modifying the `Student` class, update the `Driver` class to sort the
-   `students` array by each student's name. For this step, explicitly create a
-   `NameComparator` class that properly implements `Comparator<Student>`. Your
-   call to `sort` in the driver should use an objet of this class for its
-   comparator.
-   
-1. Stage and commit all changes.
-
-**CHECKPOINT**
-   
-1. Creating a separate comparator class is definitely useful if the comparator logic is
-   complicated and/or if you plan to use the comparator often. However, if the logic is
-   simple, then lambda expressions are preferrable because they allow you to focus on the
-   logic of the interface method itself and not all the boilerplate (i.e., the extra stuff) 
-   that is required when implemeting an interface in a separate file.
-   
-1. Now, without modifying the `Student` class, update the `Driver` class to clearly 
-   demo the following using lambda expressions (please stage and commit after each):
-   1. Find and print the max `Student` in the `students` array according to GPA.
-   1. Add references to `Course` objects to the `courses` array with different `prefix` values, then 
-      sort the `courses` array by `prefix`.
-   1. Take the `courses` array sorted in the previous sub-step and sort them by `number`.
-   1. Find and print the max `Student` in the `students` array according to the second
-      character in their name.
-   1. Something cool / interesting that hasn't been mentioned.
-   
-1. Stage and commit all changes.
-
-**CHECKPOINT**
 
 <hr/>
 
