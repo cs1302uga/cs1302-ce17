@@ -50,7 +50,8 @@ command depends on your present working directory), then please note that contex
     * In order to call this method, we need an reference to an object of a class that implements `Predicate<T>`. 
       `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
       of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
-1. Implement the `printMatches` method in `LambdaFun.java`.
+1. Implement the `printMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
+   only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
 1. In the main method of `LambdaFun`, create an object of type `Predicate<String>` and initialize the object using
    a lambda expression. The lambda expression should provide an implementation for the single abstract method of
    `Predicate<T>`. This method should return `true` if the string argument contains the letter 'a'.
