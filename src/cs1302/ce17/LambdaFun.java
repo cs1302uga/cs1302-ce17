@@ -40,7 +40,8 @@ public class LambdaFun {
         };
 
         LambdaFun.<String>printMatches(myStrings, t -> t.contains("a"));
-        System.out.println(LambdaFun.<Email>printArray(inbox, t -> t.getSender()));
+        System.out.println(LambdaFun.<Email>printFilteredArray(inbox, t -> t.getSender(),
+                                                       e->(!e.contains("gatech.edu")), ", "));
 
         //Print all emails where the sender is not from gatech.edu
 
@@ -77,11 +78,14 @@ public class LambdaFun {
         } // for
     } //printMatches
 
-    private static <T> String printArray(T[] t, Function<T,String> f, String sep) {
+    private static <T> String printFilteredArray(T[] t, Function<T,String> f, Predicate<String> p,
+                                         String sep) {
         String returnString = "";
         for (T e: t) {
-            returnString += f.apply(e);
-            returnString += sep;
+            if(p.test(f.apply(e))) {
+                returnString += f.apply(e);
+                returnString += sep;
+            } // if
         } // for
         return returnString.substring(0, returnString.lastIndexOf(sep));
     } // printArray
