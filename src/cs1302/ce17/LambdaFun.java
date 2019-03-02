@@ -6,14 +6,24 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.function.Function;
 
+/**
+ * This class contains methods related to {@code cs1302-ce17}.
+ */
 public class LambdaFun {
+
+    /** Standard Input scanner. */
     private static Scanner input = new Scanner(System.in);
 
+    /**
+     * Main entry-point into the application.
+     * @param args the command-line arguments.
+     */
     public static void main(String[] args) {
+
         String[] myStrings = new String[] {
-            "CSCI", "1302", "is", "an", "awesome", "course!",
-            "Lambda", "expressions", "scare", "me", "but", "I",
-            "will", "persevere"
+              "CSCI",        "1302",    "is", "an", "awesome", "course!",
+            "Lambda", "expressions", "scare", "me",     "but",       "I",
+              "will",   "persevere"
         };
 
         Email[] inbox = new Email[] {
@@ -51,9 +61,13 @@ public class LambdaFun {
     } // main
 
     /**
+     * Prints the elements of the array that pass the test specified by the given predicate.
+     * More formally, this method prints all elements {@code e} in the array referred to by
+     * {@code t} such that {@code p.test(e)}. Each element will be printed on its own line.
      *
-     * Assume no nulls in the array
-     *
+     * @param <T> the type of the array elements
+     * @param t the specified array
+     * @param 
      */
     private static <T> void printMatches(T[] t, Predicate<T> p) {
         for (T e: t) {
