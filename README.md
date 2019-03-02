@@ -52,9 +52,11 @@ command depends on your present working directory), then please note that contex
       of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
 1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
    only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
-1. In the main method of `LambdaFun`, declare a variable of type `Predicate<String>` and initialize the variable using
-   a lambda expression. The lambda expression should provide an implementation for the single abstract method of
-   `Predicate<T>`. This method should return `true` if the string argument contains the letter 'a'.
+1. In the main method of `LambdaFun`:
+   * Declare a variable of type `Predicate<String>`.
+   * Initialize the variable using a lambda expression which provides an implementation for the single, abstract
+     method of `Predicate<T>`.
+   * This method should return `true` if the string argument contains the letter 'a'.
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
    `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
@@ -82,13 +84,13 @@ command depends on your present working directory), then please note that contex
      parameter.
 1. Implement the `printlnMappedMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step.
    You will only need to use the `Function<T,R>` and `Predicate<T>` references to call the appropriate methods.
-1. In the main method of `LambdaFun`, declare a variable of type `Predicate<Email>` and initialize the variable 
-   using a lambda expression. The lambda expression should provide an implementation for the single abstract method of
-   `Predicate<T>`. This method should return `true` if the sender of the email does not have a "gatech.edu" email 
+1. In the main method of `LambdaFun`:
+   * Declare a variable of type `Predicate<Email>`.
+   * The predicate test should only pass (return true) if the sender of the email does not have a "gatech.edu" email 
    address (we don't want to see any emails from those folks at GA Tech).
-1. In the main method of `LamdaFun`, declare a variable of type `Function<Email, String>` and initialize the variable
-   using a lambda expression which implements the single, abstract method of `Function<T,R>`. This method should take
-   an `Email` object as a parameter and return the contents of the email as a `String`.
+   * Declare a variable of type `Function<Email, String>`.
+   * and initialize the variable using a lambda expression which implements the single, abstract method of `Function<T,R>`. 
+   * This method should take an `Email` object as a parameter and return the contents of the email as a `String`.
 1. Call the `printlnMappedMatches` using your newly created variables to filter out emails from our rival school.
    Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that everything 
    is working properly.
