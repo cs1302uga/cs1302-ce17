@@ -1,7 +1,7 @@
 
 # cs1302-ce17 Generic Method Implementation
 
-> TBD
+> "UGA is better than GA Tech" - proven fact
 
 This class exercise explores functional interfaces and lambda expressions in
 conjunction with generic methods and interfaces. In this exercise, only the generic
@@ -41,16 +41,16 @@ command depends on your present working directory), then please note that contex
 ### Exercise Steps
 
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
-    and test these methods in the order that they appear in the Java program, starting with `printMatches`. The
+    and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. The
     exact signature for this method is:
-             `private static <T> void printMatches(T[]t, Predicate<T> p)`
+             `private static <T> void printlnMatches(T[]t, Predicate<T> p)`
     Answer the following questions about this method in your notes:
     * What is the generic type parameter?
     * Specifically, what types of references can replace `T`?
     * In order to call this method, we need a reference to an object of a class that implements `Predicate<T>`. 
       `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
       of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
-1. Implement the `printMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
+1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
    only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
 1. In the main method of `LambdaFun`, declare a variable of type `Predicate<String>` and initialize the variable using
    a lambda expression. The lambda expression should provide an implementation for the single abstract method of
@@ -60,27 +60,39 @@ command depends on your present working directory), then please note that contex
    `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
    of the single abstract method in the interface `Predicate<T>` which returns true if the string contains the
    letter 'a'.
-1. Call `printMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
+1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
    You will know if everything is working correctly if the method only prints strings containing the letter 'a'.
 1. Create additional `String` arrays to further test your implementation. Make sure to provide sufficient output
    so that it will be easy to convince your TA or instructor that everything is working properly.
-   
 1. Stage and commit all changes.
 
 **CHECKPOINT**
    
-1. Take a close look at the `printArray` method and its associated Javadoc in `LambdaFun.java`. 
+1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `LambdaFun.java`. 
    The exact signature for this method is:
-         `private static <T> String printArray(T[] t, Function<T, String> f, String sep)
+         `private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
    Answer the following questions about this method in your notes:
    * What is the generic type parameter?
    * Specifically, what types of references can replace `T`?
-   * In order to call this method, we need a reference to an object of a class that implements `Function<T, String>`.
+   * In order to call this method, we need a reference to an object of a class that implements `Function<T, String>`
+     and a reference to an object of a class that implements `Predicate<T>`. Similar to `Predicate<T>`,
      `Function<T,R>` is a functional interface. Write the full method signature of the single, abstract method
-     of this class in your notes. Pay careful attendtion to the return type and the type of the formal parameter.
+     of `Function<T,R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
      **Note**: the method *can* (but doesn't have to) return a datatype that is different from the datatype of the 
      parameter.
-1. 
+1. Implement the `printlnMappedMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step.
+   You will only need to use the `Function<T,R>` and `Predicate<T>` references to call the appropriate methods.
+1. In the main method of `LambdaFun`, declare a variable of type `Predicate<Email>` and initialize the variable 
+   using a lambda expression. The lambda expression should provide an implementation for the single abstract method of
+   `Predicate<T>`. This method should return `true` if the sender of the email does not have a "gatech.edu" email 
+   address (we don't want to see any emails from those folks at GA Tech).
+1. In the main method of `LamdaFun`, declare a variable of type `Function<Email, String>` and initialize the variable
+   using a lambda expression which implements the single, abstract method of `Function<T,R>`. This method should take
+   an `Email` object as a parameter and return the contents of the email as a `String`.
+1. Call the `printlnMappedMatches` using your newly created variables to filter out emails from our rival school.
+   Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that everything 
+   is working properly.
+1. Stage and commit all changes.
 
 <hr/>
 
