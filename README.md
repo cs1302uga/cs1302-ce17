@@ -48,27 +48,32 @@ command depends on your present working directory), then please note that contex
     ```
     Answer the following questions about this method in your notes:
     * What is the generic type parameter?
-    * Specifically, what types of references can replace `T`?
+    * Specifically, what reference types can replace `T`?
     * In order to call this method, we need a reference to an object of a class that implements `Predicate<T>`. 
       `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
       of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
       
 1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
    only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
+   
 1. In the main method of `LambdaFun`:
    * Declare a variable of type `Predicate<String>`.
    * Initialize the variable using a lambda expression which provides an implementation for the single, abstract
      method of `Predicate<T>`.
    * This method should return `true` if the string argument contains the letter 'a'.
+   
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
    `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
    of the single abstract method in the interface `Predicate<T>` which returns true if the string contains the
    letter 'a'.
+   
 1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
    You will know if everything is working correctly if the method only prints strings containing the letter 'a'.
+   
 1. Create additional `String` arrays to further test your implementation. Make sure to provide sufficient output
    so that it will be easy to convince your TA or instructor that everything is working properly.
+   
 1. Stage and commit all changes.
 
 **CHECKPOINT**
