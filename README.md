@@ -44,7 +44,7 @@ command depends on your present working directory), then please note that contex
     and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
     The exact signature for this method is:
     ```java
-    private static <T> void printlnMatches(T[]t, Predicate<T> p)
+    private static <T> void printlnMatches(T[] t, Predicate<T> p)
     ```
     Answer the following questions about this method in your notes:
     * What is the generic type parameter?
