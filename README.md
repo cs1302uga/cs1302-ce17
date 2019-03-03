@@ -106,9 +106,9 @@ command depends on your present working directory), then please note that contex
      nicely formatted `String`. Remember, you can always refer to the API documentation
      for the associated interface when trying to determine the layout of your lambda.
    
-1. Call the `printlnMappedMatches` using your newly created variables to filter out emails from our rival school.
-   Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that everything 
-   is working properly.
+1. Call the `printlnMappedMatches` using your newly created variables to filter out emails in the array referred
+   to by `inbox` from our rival school. Make sure to provide sufficient output so that it will be easy to 
+   convince your TA or instructor that everything is working properly.
    
 1. Create two additional `Function<Email, String>` objects to further test your `printlnMappedMatches` method on the same
    array with the same predicate. In other words, you can provide different ways to print out the emails. 
