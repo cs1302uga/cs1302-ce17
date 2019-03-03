@@ -59,17 +59,16 @@ command depends on your present working directory), then please note that contex
 1. At the end of the `main` method of `LambdaFun` class:
    * Declare a variable of type `Predicate<String>`.
    * Initialize the variable using a lambda expression which provides an implementation for the single, abstract
-     method of `Predicate<T>`.
-   * This method should return `true` if the string argument contains the letter 'a'.
+     method of the `Predicate<String>` interface.
+   * This method should return `true` if the string argument contains the letter `"a"` (case sensitive).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
    `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
-   of the single abstract method in the interface `Predicate<T>` which returns true if the string contains the
-   letter 'a'.
+   of the single abstract method in the interface.
    
 1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
-   You will know if everything is working correctly if the method only prints strings containing the letter 'a'.
+   You will know if everything is working correctly if the method only prints strings containing the letter `"a"`.
    
 1. Create additional `String` arrays to further test your implementation. Make sure to provide sufficient output
    so that it will be easy to convince your TA or instructor that everything is working properly.
