@@ -39,26 +39,6 @@ public class LambdaFun {
                       LocalDate.of(2019, 2, 8), "Go GA Tech!")
         };
 
-        LambdaFun.<String>printMatches(myStrings, t -> t.contains("a"));
-        System.out.println(LambdaFun.<Email>printFilteredArray(inbox, t -> t.getSender(),
-                                                       e->(!e.contains("gatech.edu")), ", "));
-
-        //Print all emails where the sender is not from gatech.edu
-
-        //Print all emails that have certain words in the subject.
-        //Print all emails that were sent in the last week.
-
-        //Print all quizzes with a time limit of under 20 minutes
-
-        //Print all bonus quizzes
-
-        //TRICKY: Write a method that takes a generic array, increases its size by 1,
-        //and adds a new value from on user input.  Your method can assume that the
-        //user inputs a value of the appropriate type.
-        //see:
-        //http://cobweb.cs.uga.edu/~mec/cs1302-genlistadt-doc/cs1302/genlistadt/GenList.html#toArray-java.util.function.IntFunction-
-        //IntFunction
-
     } // main
 
     /**
