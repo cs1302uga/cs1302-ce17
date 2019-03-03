@@ -41,15 +41,18 @@ command depends on your present working directory), then please note that contex
 ### Exercise Steps
 
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
-    and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. The
-    exact signature for this method is:
-             `private static <T> void printlnMatches(T[]t, Predicate<T> p)`
+    and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
+    The exact signature for this method is:
+    ```java
+    private static <T> void printlnMatches(T[]t, Predicate<T> p)
+    ```
     Answer the following questions about this method in your notes:
     * What is the generic type parameter?
     * Specifically, what types of references can replace `T`?
     * In order to call this method, we need a reference to an object of a class that implements `Predicate<T>`. 
       `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
       of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
+      
 1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
    only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
 1. In the main method of `LambdaFun`:
