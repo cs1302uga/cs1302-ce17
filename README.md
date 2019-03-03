@@ -99,7 +99,7 @@ command depends on your present working directory), then please note that contex
 1. At the end of the `main` method of `LambdaFun` class:
    * Declare a variable of type `Predicate<Email>` and assign to it, using a lambda expression, a referene to
      an object that tests if the sender of the email does not have a `"gatech.edu"` email address 
-     (we'll "pretend" that they go to the spam filder). Remember, you can always refer to the API documentation
+     (we'll "pretend" that they go to the spam filter). Remember, you can always refer to the API documentation
      for the associated interface when trying to determine the layout of your lambda.
    * Declare a variable of type `Function<Email, String>` and assign to it, using a lambda expression, a reference
      to an object that takes an `Email` object as a parameter and return the contents of the email as some
