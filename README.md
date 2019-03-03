@@ -80,18 +80,22 @@ command depends on your present working directory), then please note that contex
    
 1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `LambdaFun.java`. 
    The exact signature for this method is:
-         `private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
+   ```java
+   private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f)
+   ```
    Answer the following questions about this method in your notes:
    * What is the generic type parameter?
-   * Specifically, what types of references can replace `T`?
+   * Specifically, what reference types can replace `T`?
    * In order to call this method, we need a reference to an object of a class that implements `Function<T, String>`
      and a reference to an object of a class that implements `Predicate<T>`. Similar to `Predicate<T>`,
-     `Function<T,R>` is a functional interface. Write the full method signature of the single, abstract method
-     of `Function<T,R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
-     **Note**: the method *can* (but doesn't have to) return a datatype that is different from the datatype of the 
+     `Function<T, R>` is a functional interface. Write the full method signature of the single, abstract method
+     of `Function<T, R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
+     **Note**: The method *can* (but doesn't have to) return a datatype that is different from the datatype of the 
      parameter.
+     
 1. Implement the `printlnMappedMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step.
-   You will only need to use the `Function<T,R>` and `Predicate<T>` references to call the appropriate methods.
+   You will only need to use the `Function<T, R>` and `Predicate<T>` references to call the appropriate methods.
+   
 1. In the main method of `LambdaFun`:
    * Declare a variable of type `Predicate<Email>`.
    * The predicate test should only pass (return true) if the sender of the email does not have a "gatech.edu" email 
@@ -99,9 +103,11 @@ command depends on your present working directory), then please note that contex
    * Declare a variable of type `Function<Email, String>`.
    * and initialize the variable using a lambda expression which implements the single, abstract method of `Function<T,R>`. 
    * This method should take an `Email` object as a parameter and return the contents of the email as a `String`.
+   
 1. Call the `printlnMappedMatches` using your newly created variables to filter out emails from our rival school.
    Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that everything 
    is working properly.
+   
 1. Stage and commit all changes.
 
 **CHECKPOINT**
