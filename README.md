@@ -56,7 +56,7 @@ command depends on your present working directory), then please note that contex
 1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
    only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
    
-1. In the main method of `LambdaFun`:
+1. At the end of the `main` method of `LambdaFun` class:
    * Declare a variable of type `Predicate<String>`.
    * Initialize the variable using a lambda expression which provides an implementation for the single, abstract
      method of `Predicate<T>`.
