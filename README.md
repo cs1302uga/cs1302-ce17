@@ -96,17 +96,24 @@ command depends on your present working directory), then please note that contex
 1. Implement the `printlnMappedMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step.
    You will only need to use the `Function<T, R>` and `Predicate<T>` references to call the appropriate methods.
    
-1. In the main method of `LambdaFun`:
-   * Declare a variable of type `Predicate<Email>`.
-   * The predicate test should only pass (return true) if the sender of the email does not have a "gatech.edu" email 
-   address (we don't want to see any emails from those folks at GA Tech).
-   * Declare a variable of type `Function<Email, String>`.
-   * and initialize the variable using a lambda expression which implements the single, abstract method of `Function<T,R>`. 
-   * This method should take an `Email` object as a parameter and return the contents of the email as a `String`.
+1. At the end of the `main` method of `LambdaFun` class:
+   * Declare a variable of type `Predicate<Email>` and assign to it, using a lambda expression, a referene to
+     an object that tests if the sender of the email does not have a `"gatech.edu"` email address 
+     (we'll "pretend" that they go to the spam filder). Remember, you can always refer to the API documentation
+     for the associated interface when trying to determine the layout of your lambda.
+   * Declare a variable of type `Function<Email, String>` and assign to it, using a lambda expression, a reference
+     to an object that takes an `Email` object as a parameter and return the contents of the email as some
+     nicely formatted `String`. Remember, you can always refer to the API documentation
+     for the associated interface when trying to determine the layout of your lambda.
    
 1. Call the `printlnMappedMatches` using your newly created variables to filter out emails from our rival school.
    Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that everything 
    is working properly.
+   
+1. Create two additional `Function<Email, String>` objects to further test your `printlnMappedMatches` method on the same
+   array with the same predicate. In other words, you can provide different ways to print out the emails. 
+   Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that 
+   everything is working properly.
    
 1. Stage and commit all changes.
 
