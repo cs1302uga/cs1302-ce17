@@ -72,6 +72,8 @@ command depends on your present working directory), then please note that contex
    
 1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
    You will know if everything is working correctly if the method only prints strings containing the letter `"a"`.
+
+1. Stage and commit all changes.
    
 1. Create three additional `Predicate<String>` objects to further test your `printlnMatches` method on the same
    array. Try to make them interesting! Make sure to provide sufficient output so that it will be easy to 
@@ -112,6 +114,8 @@ command depends on your present working directory), then please note that contex
 1. Call the `printlnMappedMatches` using your newly created variables to filter out emails in the array referred
    to by `inbox` from our rival school. Make sure to provide sufficient output so that it will be easy to 
    convince your TA or instructor that everything is working properly.
+   
+1. Stage and commit all changes.
    
 1. Create two additional `Function<Email, String>` objects to further test your `printlnMappedMatches` method on the same
    array with the same predicate. In other words, you can provide different ways to print out the emails. 
