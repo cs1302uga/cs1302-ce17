@@ -14,9 +14,7 @@ method signatures will be provided. Implementation details are left to the stude
 
 ## References and Prerequisites
 
-* [`ArrayUtility` API Documentation](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-ce16-api/index.html)
 * [Oracle: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
-* [Oracle: Bounded Type Parameters](https://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
 
 ## Questions
 
