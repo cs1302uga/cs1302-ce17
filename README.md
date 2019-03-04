@@ -1,7 +1,12 @@
 
 # cs1302-ce17 Generic Method Implementation
 
-> "UGA is better than GA Tech" - proven fact
+> ```java
+> String notSecret = "VUdBIGlzIGJldHRlciB0aGFuIEdBIFRlY2g=";
+> String decoded = new String(java.util.Base64.getDecoder().decode(notSecret));
+> System.out.println(decoded);
+> ```
+> **-- Proven Fact**
 
 This class exercise explores functional interfaces and lambda expressions in
 conjunction with generic methods and interfaces. In this exercise, only the generic
