@@ -68,8 +68,6 @@ command depends on your present working directory), then please note that contex
        T var = si.foo(); // foo returns T, because A is replaced with T
    } // bar
    ```
-   
-   If you have any questions about this, then 
 
 ### Exercise Steps
 
