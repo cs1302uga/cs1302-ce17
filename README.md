@@ -95,7 +95,7 @@ command depends on your present working directory), then please note that contex
    1. Initialize the variable using a lambda expression which provides an implementation for the single, abstract
       method of the `Predicate<String>` interface. See the 
       [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
-      if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write 
+      if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for `java.lang.String`, provided
       [here](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html).
