@@ -4,18 +4,18 @@ import java.time.LocalDate;
 
 /** Represents an Email message in the cs1302 mock
  *  eLC application.
- * 
+ *
  *  @author Brad Barnes
  *  @version 1.1; Mar 2 2019
  */
 public class Email {
-    /** Email address of the recipient */
+    /** Email address of the recipient. */
     private String recipient;
-    /** Email address of the sender */
+    /** Email address of the sender. */
     private String sender;
-    /** Date sent */
+    /** Date sent. */
     private LocalDate sendDate;
-    /** Contents of the Email message */
+    /** Contents of the Email message. */
     private String contents;
 
     /**
@@ -39,25 +39,25 @@ public class Email {
                   recipient, sender);
         checkEmpty("Email Constructor", recipient, sender, contents);
         checkAddress("Email Constructor", recipient, sender);
-	
+
         this.sender = sender;
         this.recipient = recipient;
         this.sendDate = sendDate;
         this.contents = contents;
     } // Email
-    
+
     /**
      * Returns the date that the Email was originally sent.
      *
-     * @return the {@code java.time.LocalDate} this {@code Email} 
+     * @return the {@code java.time.LocalDate} this {@code Email}
      * was sent.
      */
     public LocalDate getDateSent() {
         return sendDate;
     } // getSendDate
-    
+
     /**
-     * Returns the email address of the recipient as a 
+     * Returns the email address of the recipient as a
      * {@code java.lang.String}.
      * @return the email address of the recipient of this
      * {@code Email} object.
@@ -67,7 +67,7 @@ public class Email {
     } // getRecipient
 
     /**
-     * Returns the email address of the sender as a 
+     * Returns the email address of the sender as a
      * {@code java.lang.String}.
      * @return the email address of the sender of this
      * {@code Email} object.
@@ -77,7 +77,7 @@ public class Email {
     } // getSender
 
     /**
-     * Returns the contents of this {@code Email} as a 
+     * Returns the contents of this {@code Email} as a
      * {@code java.lang.String}.
      * @return the contents of this {@code Email} object.
      */
@@ -87,18 +87,18 @@ public class Email {
 
     /**
      * Throws a NullPointerException if any values in the
-     * varargs parameter, {@code o} are {@code null}. The 
-     * method performs no actions if all values in {@code o} 
+     * varargs parameter, {@code o} are {@code null}. The
+     * method performs no actions if all values in {@code o}
      * are non-null.
      *
      * @param method the name of the calling method.
      * @param o varargs parameter containing all objects to verify
-     * @throws NullPointerException if any element of parameter 
+     * @throws NullPointerException if any element of parameter
      * {@code o} is null.
      */
     private void checkNull(String method, Object ... o) {
-        for(Object obj: o) {
-            if(o == null) {
+        for (Object obj: o) {
+            if (o == null) {
                 throw new NullPointerException(method +
                                                ": Null Argument Provided");
             } // if
@@ -107,18 +107,18 @@ public class Email {
 
     /**
      * Throws an IllegalArgumentException if any {@code Strings}
-     * in the varargs parameter, {@code s} are empty. The 
-     * method performs no actions if all values in {@code s} 
+     * in the varargs parameter, {@code s} are empty. The
+     * method performs no actions if all values in {@code s}
      * are non-null.
      *
      * @param method the name of the calling method.
      * @param s varargs parameter containing all strings to verify
-     * @throws IllegalArgumentException if any element of parameter 
+     * @throws IllegalArgumentException if any element of parameter
      * {@code s} is empty.
      */
     private void checkEmpty(String method, String ... s) {
-        for(String str: s) {
-            if(str.equals("")) {
+        for (String str: s) {
+            if (str.equals("")) {
                 throw new IllegalArgumentException(method +
                                                    ": Empty String Provided");
             } // if
@@ -127,30 +127,28 @@ public class Email {
 
     /**
      * Throws an IllegalArgumentException if any {@code Strings}
-     * in the varargs parameter, {@code s} do not contain a 
+     * in the varargs parameter, {@code s} do not contain a
      * valid email address. This method considers an email address
      * valid if it contains the {@code @} symbol and a {@code .}
      * somewhere after the {@code @}. This method for checking
      * validity would not hold up in a real-world system. For more
-     * information on accurately checking email validity, see 
+     * information on accurately checking email validity, see
      * the link below.
-     * The method performs no actions if all values in {@code s} 
+     * The method performs no actions if all values in {@code s}
      * contain valid email addresses.
      *
      * @param method the name of the calling method.
      * @param s varargs parameter containing all strings to verify
-     * @throws IllegalArgumentException if any element of parameter 
+     * @throws IllegalArgumentException if any element of parameter
      * {@code s} contains an invalid address.
-     * @see https://www.regular-expressions.info/email.html
      */
     private void checkAddress(String method, String ... s) {
-        for(String str: s) {
+        for (String str: s) {
             int index = str.indexOf("@");
-            if((index == -1) || !(str.substring(index).contains("."))) {
+            if ((index == -1) || !(str.substring(index).contains("."))) {
                 throw new IllegalArgumentException(method +
                                                    ": Invalid Email Address");
             } // if
         } // for
     } // checkAddress
 } // Email
-

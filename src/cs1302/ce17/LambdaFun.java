@@ -21,9 +21,9 @@ public class LambdaFun {
     public static void main(String[] args) {
 
         String[] myStrings = new String[] {
-              "CSCI",        "1302",    "is", "an", "awesome", "course!",
+            "CSCI",        "1302",    "is", "an", "awesome", "course!",
             "Lambda", "expressions", "scare", "me",     "but",       "I",
-              "will",   "persevere"
+            "will",   "persevere"
         };
 
         Email[] inbox = new Email[] {
@@ -57,14 +57,14 @@ public class LambdaFun {
 
     /**
      * Prints the elements of the array that pass the test specified by the given predicate
-     * using a string mapper. More formally, this method prints the string mapped elements 
-     * {@code f.apply(e)} in the array referred to by {@code t} for each {@code e} such that 
+     * using a string mapper. More formally, this method prints the string mapped elements
+     * {@code f.apply(e)} in the array referred to by {@code t} for each {@code e} such that
      * {@code p.test(e)}. Each string mapped element will be printed on its own line.
      *
      * @param <T> the type of the array elements
      * @param t the specified array
      * @param p the specified predicate
-     * @param p the specified string mapper
+     * @param f the specified string mapper
      * @throws NullPointerException if the specified predicate or string mapper is {@code null}
      */
     private static <T> void printlnMappedMatches(T[] t, Predicate<T> p, Function<T, String> f) {
@@ -72,4 +72,3 @@ public class LambdaFun {
     } // printlnMappedMatches
 
 } // LambdaFun
-
