@@ -21,7 +21,9 @@ method signatures will be provided. Implementation details are left to the stude
 
 ## References and Prerequisites
 
-* [Oracle: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
+* [The Java™ Tutorials: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
+* [The Java™ Tutorials: Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
+* [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
 
 ## Questions
 
@@ -57,20 +59,25 @@ command depends on your present working directory), then please note that contex
     private static <T> void printlnMatches(T[] t, Predicate<T> p)
     ```
     Answer the following questions about this method in your notes:
-    * What is the generic type parameter?
-    * Specifically, what reference types can replace `T`?
-    * In order to call this method, we need a reference to an object of a class that implements `Predicate<T>`. 
-      `Predicate<T>` is a functional interface. Write the full method signature of the single, abstract method
-      of this class in your notes. Pay careful attention to the return type and the type of the formal parameter.
+    1. What is the generic type parameter?
+    1. Specifically, what reference types can replace `T`?
+    1. In order to call this method, we need a reference to an object of a class that implements 
+       [`Predicate<T>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html). 
+       `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
+       of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
       
-1. Implement the `printlnMatches` method in `LambdaFun.java`. You do not need to use a lambda for this step. You will
-   only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
+1. Implement the `printlnMatches` method in `LambdaFun.java`. **You do not need to use a lambda for this step.**
+   You will only need to use the object of type `Predicate<T>` referred to by `p` to call the appropriate method.
+   If you did the previous step, then you know what method(s) can be called with `p`. Implement this `printlnMatches`
+   method using some code that, uses `p`.
    
 1. At the end of the `main` method of `LambdaFun` class:
-   * Declare a variable of type `Predicate<String>`.
-   * Initialize the variable using a lambda expression which provides an implementation for the single, abstract
-     method of the `Predicate<String>` interface.
-   * This method should return `true` if the string argument contains the letter `"a"` (case sensitive).
+   1. Declare a variable of type `Predicate<String>`.
+   1. Initialize the variable using a lambda expression which provides an implementation for the single, abstract
+      method of the `Predicate<String>` interface. See the 
+      [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
+      if you're still unsure about the syntax. Use your answer for **1.c.** to help you write 
+   1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
