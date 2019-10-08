@@ -70,8 +70,10 @@ command depends on your present working directory), then please note that contex
    `p` is a reference variable of an interface type and the code compiles. This object contains a specific implementation
    of the single abstract method in the interface.
    
-1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.  
-   You will know if everything is working correctly if the method only prints strings containing the letter `"a"`.
+1. Call `printlnMatches` by passing in array `myStrings` along with your newly created `Predicate<String>` variable.
+
+1. Compile and run your code. You will know if everything is working correctly if the method only prints strings 
+   containing the letter `"a"`.
 
 1. Stage and commit all changes.
    
@@ -79,7 +81,7 @@ command depends on your present working directory), then please note that contex
    array. Try to make them interesting! Make sure to provide sufficient output so that it will be easy to 
    convince your TA or instructor that everything is working properly.
    
-1. Stage and commit all changes.
+1. Make sure your code passes `checkstyle` then stage and commit all changes.
 
 **CHECKPOINT**
    
@@ -122,7 +124,7 @@ command depends on your present working directory), then please note that contex
    Make sure to provide sufficient output so that it will be easy to convince your TA or instructor that 
    everything is working properly.
    
-1. Stage and commit all changes.
+1. Make sure your code passes `checkstyle` then stage and commit all changes.
 
 **CHECKPOINT**
 
