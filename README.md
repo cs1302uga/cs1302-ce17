@@ -12,6 +12,13 @@ This class exercise explores functional interfaces and lambda expressions in
 conjunction with generic methods and interfaces. In this exercise, only the generic
 method signatures will be provided. Implementation details are left to the student.
 
+## Course-Specific Learning Outcomes
+
+* **LO2.d:** (Partial) Implement new generic methods, interfaces, and classes in a software solution.
+* **LO2.e:** (Partial) Utilize existing generic methods, interfaces, and classes in a software solution.
+* **LO4.a:** (Partial) Design, create and use interfaces in a software solution.
+* **LO4.b:** (Partial) Utilize interface-based polymorphism in a software solution.
+
 ## References and Prerequisites
 
 * [Oracle: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
