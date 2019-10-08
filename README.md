@@ -24,6 +24,7 @@ method signatures will be provided. Implementation details are left to the stude
 * [The Java™ Tutorials: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
 * [The Java™ Tutorials: Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
 * [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
+* [`java.util.function.Function` Interface Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
 
 ## Questions
 
@@ -49,6 +50,24 @@ command depends on your present working directory), then please note that contex
    ```
    $ find src
    ```
+1. **NOTE:** In this exercise, you will be referring to multiple generic interfaces, some of which
+   have two generic type parameters. It's very important that you keep keep parameter composition 
+   in mind when referring to the API documentation. For example, consider the following code snippets
+   that illustrate type parameter composition:
+   
+   ```java
+   public interface SomeInterface<A> {
+       A foo();
+   } // SomeInterface
+   ```
+   
+   ```
+   public static <T> void bar(SomeInterface<T> si) {
+       T var = si.foo(); // foo returns T, because A is replaced with T
+   } // bar
+   ```
+   
+   If you have any questions about this, then 
 
 ### Exercise Steps
 
@@ -76,8 +95,10 @@ command depends on your present working directory), then please note that contex
    1. Initialize the variable using a lambda expression which provides an implementation for the single, abstract
       method of the `Predicate<String>` interface. See the 
       [Oracle tutorial](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
-      if you're still unsure about the syntax. Use your answer for **1.c.** to help you write 
+      if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write 
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
+      You may wish to refer to the documentation for `java.lang.String`, provided
+      [here](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
@@ -92,13 +113,13 @@ command depends on your present working directory), then please note that contex
 1. Stage and commit all changes.
    
 1. Create three additional `Predicate<String>` objects to further test your `printlnMatches` method on the same
-   array. Try to make them interesting! Make sure to provide sufficient output so that it will be easy to 
+   array. **Try to make them interesting!** Make sure to provide sufficient output so that it will be easy to 
    convince your TA or instructor that everything is working properly.
    
 1. Make sure your code passes `checkstyle` then stage and commit all changes.
 
 **CHECKPOINT**
-   
+  
 1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `LambdaFun.java`. 
    The exact signature for this method is:
    ```java
@@ -107,7 +128,8 @@ command depends on your present working directory), then please note that contex
    Answer the following questions about this method in your notes:
    * What is the generic type parameter?
    * Specifically, what reference types can replace `T`?
-   * In order to call this method, we need a reference to an object of a class that implements `Function<T, String>`
+   * In order to call this method, we need a reference to an object of a class that implements 
+     [`Function<T, String>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
      and a reference to an object of a class that implements `Predicate<T>`. Similar to `Predicate<T>`,
      `Function<T, R>` is a functional interface. Write the full method signature of the single, abstract method
      of `Function<T, R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
