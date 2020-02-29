@@ -2,6 +2,8 @@
 # cs1302-ce17 Generic Method Implementation
 
 ![Approved for: Fall 2019](https://img.shields.io/badge/Approved%20for-Fall%202019-brightgreen)
+<!--![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
+![Max Group Size: 3](https://img.shields.io/badge/Max%20Group%20Size-3-important)-->
 
 > ```java
 > String notSecret = "VUdBIGlzIGJldHRlciB0aGFuIEdBIFRlY2g=";
