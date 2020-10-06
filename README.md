@@ -1,8 +1,7 @@
 
 # cs1302-ce17 Generic Method Implementation
 
-![Approved for: Spring 2020](https://img.shields.io/badge/Approved%20for-Spring%202020-blue)
-![Max Group Size: 3](https://img.shields.io/badge/Max%20Group%20Size-3-important)
+![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 > ```java
 > String notSecret = "VUdBIGlzIGJldHRlciB0aGFuIEdBIFRlY2g=";
@@ -26,13 +25,13 @@ method signatures will be provided. Implementation details are left to the stude
 
 * [The Java™ Tutorials: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
 * [The Java™ Tutorials: Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
-* [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html)
-* [`java.util.function.Function` Interface Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
+* [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html)
+* [`java.util.function.Function` Interface Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html)
 
 ## Questions
 
 In your notes, clearly answer the following questions. These instructions assume that you are 
-logged into the Nike server. 
+logged into the Odin server. 
 
 **NOTE:** If a step requires you to enter in a command, please provide in your notes the full 
 command that you typed to make the related action happen. If context is necessary (e.g., the 
@@ -40,7 +39,7 @@ command depends on your present working directory), then please note that contex
 
 ### Getting Started
 
-1. Use Git to clone the repository for this exercise onto Nike into a subdirectory called `cs1302-ce17`:
+1. Use Git to clone the repository for this exercise onto Odin into a subdirectory called `cs1302-ce17`:
 
    ```
    $ git clone --depth 1 https://github.com/cs1302uga/cs1302-ce17.git
@@ -70,7 +69,9 @@ command depends on your present working directory), then please note that contex
    } // bar
    ```
 
-### Exercise Steps
+## Exercise Steps
+
+### Checkpoint 1 Steps
 
 1. `LambdaFun.java` contains method signatures and documentation for three generic methods. We will implement
     and test these methods in the order that they appear in the Java program, starting with `printlnMatches`. 
@@ -82,7 +83,7 @@ command depends on your present working directory), then please note that contex
     1. What is the generic type parameter?
     1. Specifically, what reference types can replace `T`?
     1. In order to call this method, we need a reference to an object of a class that implements 
-       [`Predicate<T>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html). 
+       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html). 
        `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
        of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
       
@@ -99,7 +100,7 @@ command depends on your present working directory), then please note that contex
       if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for `java.lang.String`, provided
-      [here](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html).
+      [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
@@ -119,8 +120,14 @@ command depends on your present working directory), then please note that contex
    
 1. Make sure your code passes `checkstyle` then stage and commit all changes.
 
-**CHECKPOINT**
-  
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-1-success?style=for-the-badge)
+
+<hr/>
+
+### Checkpoint 2 Steps
+
 1. Take a close look at the `printlnMappedMatches` method and its associated Javadoc in `LambdaFun.java`. 
    The exact signature for this method is:
    ```java
@@ -130,7 +137,7 @@ command depends on your present working directory), then please note that contex
    * What is the generic type parameter?
    * Specifically, what reference types can replace `T`?
    * In order to call this method, we need a reference to an object of a class that implements 
-     [`Function<T, String>`](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html)
+     [`Function<T, String>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html)
      and a reference to an object of a class that implements `Predicate<T>`. Similar to `Predicate<T>`,
      `Function<T, R>` is a functional interface. Write the full method signature of the single, abstract method
      of `Function<T, R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
@@ -163,7 +170,53 @@ command depends on your present working directory), then please note that contex
    
 1. Make sure your code passes `checkstyle` then stage and commit all changes.
 
-**CHECKPOINT**
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished%20Checkpoint-2-success?style=for-the-badge)
+
+<hr/>
+
+### Submission Steps
+
+**Each student needs to individually submit their own work.**
+
+1. Create a plain text file called `SUBMISSION.md` directly inside the `cs1302-ce17`
+   directory with the following information.
+
+   1. Your name and UGA ID number;
+   1. Collaborator names, if any; and
+   1. If you created the API website, include the full link to the site you generated.
+   
+   Here is an example of the contents of `SUBMISSION.md`.
+   
+   ```
+   1. Sally Smith (811-000-999)
+   2. Collaborators: Joe Allen, Stacie Mack
+   3. https://webwork.cs.uga.edu/~user/cs1302-ce17-doc
+   ```
+
+1. Change directories to the parent of `cs1302-ce17` (e.g., `cd ..` from `cs1302-ce17`). If you would like
+   to make a backup tar file, the instructions are in the submissions steps for [ce02](https://github.com/cs1302uga/cs1302-ce02).
+   We won't repeat those steps here and you can view them as optional.
+   
+1. Use the `submit` command to submit this exercise to `csci-1302`:
+   
+   ```
+   $ submit cs1302-ce17 csci-1302
+   ```
+   
+   Read the output of the submit command very carefully. If there is an error while submitting, then it will displayed 
+   in that output. Additionally, if successful, the submit command creates a new receipt file in the directory you 
+   submitted. The receipt file begins with rec and contains a detailed list of all files that were successfully submitted. 
+   Look through the contents of the rec file and always remember to keep that file in case there is an issue with your submission.
+
+   **Note:** You must be on Odin to submit.
+
+<hr/>
+
+![CP](https://img.shields.io/badge/Just%20Finished-Submission-success?style=for-the-badge)
+
+<hr/>
 
 <hr/>
 
