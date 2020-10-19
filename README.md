@@ -63,7 +63,7 @@ command depends on your present working directory), then please note that contex
    } // SomeInterface
    ```
    
-   ```
+   ```java
    public static <T> void bar(SomeInterface<T> si) {
        T var = si.foo(); // foo returns T, because A is replaced with T
    } // bar
