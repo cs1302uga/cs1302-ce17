@@ -25,8 +25,8 @@ method signatures will be provided. Implementation details are left to the stude
 
 * [The Java™ Tutorials: Generic Methods](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html)
 * [The Java™ Tutorials: Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
-* [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html)
-* [`java.util.function.Function` Interface Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html)
+* [`java.util.function.Predicate` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html)
+* [`java.util.function.Function` Interface Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html)
 
 ## Questions
 
@@ -83,7 +83,7 @@ command depends on your present working directory), then please note that contex
     1. What is the generic type parameter?
     1. Specifically, what reference types can replace `T`?
     1. In order to call this method, we need a reference to an object of a class that implements 
-       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html). 
+       [`Predicate<T>`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html). 
        `Predicate<T>` is a functional interface. **Write the full method signature of the single, abstract method
        of this class in your notes.** Pay careful attention to the return type and the type of the formal parameter.
       
@@ -100,7 +100,7 @@ command depends on your present working directory), then please note that contex
       if you're still unsure about the syntax. Use your answer for **1.iii.** to help you write this lambda.
    1. This lambda should return `true` if the string argument contains the letter `"a"` (case sensitive).
       You may wish to refer to the documentation for `java.lang.String`, provided
-      [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
+      [here](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html).
    
 1. Variable `p` now references an object of type `Predicate<String>`. **HOLD THE FRONT DOOR!** That one line of code
    created a class that implemented an interface and created an object of that class! It must be the case since
@@ -137,7 +137,7 @@ command depends on your present working directory), then please note that contex
    * What is the generic type parameter?
    * Specifically, what reference types can replace `T`?
    * In order to call this method, we need a reference to an object of a class that implements 
-     [`Function<T, String>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html)
+     [`Function<T, String>`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html)
      and a reference to an object of a class that implements `Predicate<T>`. Similar to `Predicate<T>`,
      `Function<T, R>` is a functional interface. Write the full method signature of the single, abstract method
      of `Function<T, R>` in your notes. Pay careful attention to the return type and the type of the formal parameter.
